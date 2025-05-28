@@ -1,5 +1,7 @@
 name: Your_first_workflow
-on: [push]
+on:
+  push:
+    branches: [ "main" ]
 
 jobs:
     first_job:
@@ -9,12 +11,9 @@ jobs:
             - name: checkout
               uses: actions/checkout@v2
 
-            - name: welcom_message
-              run: echo "My first workflow"
-
-            - name: List files
-              run: ls
-
-            - name: Read Files
-              run: cat README.md
+            - name: List and Read files
+              run: |
+                echo "My first workflow"
+                ls -ltra
+                cat README.md
               
