@@ -29,8 +29,8 @@ jobs:
               with:
                 name: dragon_file
 
-            - name: Check if file exists ls
-              run: grep -i "dragon" dragon.txt
+            - name: Check if file exists
+              run: ls | grep -i "dragon"
 
     deploy:
         needs: test_job
