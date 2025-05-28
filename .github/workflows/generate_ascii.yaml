@@ -29,8 +29,8 @@ jobs:
               with:
                 name: dragon_file
 
-            - name: Check if file exists
-              run: grep -i "dragon" dragon.txt
+            - name: Check if file exists ls
+              run: ls && grep -i "dragon" dragon.txt
 
     deploy:
         runs-on: ubuntu-lastes
