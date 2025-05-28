@@ -13,5 +13,5 @@ jobs:
 
             - name: Execute shell script
               run: |
-                chomd +x
+                chmod +x
                 ./script
