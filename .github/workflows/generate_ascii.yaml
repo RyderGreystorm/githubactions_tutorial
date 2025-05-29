@@ -44,5 +44,5 @@ jobs:
             - name: Execute the dragon
               run: cat dragon.txt
 
-            - name: Deploy
+            - name: Deploy 
               run: echo "Deploying"
