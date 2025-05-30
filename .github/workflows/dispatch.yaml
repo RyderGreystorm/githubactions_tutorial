@@ -1,0 +1,42 @@
+name: Testing script
+on:
+    push:
+        branches: [ "main" ]
+    workflow_dispatch:
+        inputs:
+            run-test:
+                description: "Choose whether to run a test or not"
+                type: boolean
+                required: true
+            test-type:
+                description: "Choose the kind of test you want to run"
+                type: choice
+                options:
+                    - unit
+                    - integration
+                    - all
+                required: true
+            environment:
+                description: "Which environemnt do you want to run this workload for"
+                type: choice
+                options:
+                    - production
+                    - staging
+                    - pre-production
+                    - qa
+                required: true
+jobs:
+    test:
+        runs-on: ubuntu-latest
+        steps:
+          - name: Print workflow inputs
+            run: |
+              echo "Runs tests: ${{ inputs.run-test }}"
+              echo "Test Types: ${{ inputs.test-type }}"
+          - name: Test
+            if: ${{ inputs.run-test == 'true '}}
+            run: echo "Testing....................."
+
+          - name: Unit Testing
+            if: ${{ inputs.test-type == 'unit '}}
+            run: echo "Unit Testing Initiated............."
