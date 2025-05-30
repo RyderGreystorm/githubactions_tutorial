@@ -34,9 +34,9 @@ jobs:
               echo "Runs tests: ${{ inputs.run-test }}"
               echo "Test Types: ${{ inputs.test-type }}"
           - name: Test
-            if: ${{ inputs.run-test == 'true '}}
+            if: ${{ inputs.run-test == 'true'}}
             run: echo "Testing....................."
 
           - name: Unit Testing
-            if: ${{ inputs.test-type == 'unit '}}
+            if: ${{ inputs.test-type == 'unit'}}
             run: echo "Unit Testing Initiated............."
